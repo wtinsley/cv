@@ -173,8 +173,6 @@
 \renewcommand{\headrulewidth}{0pt}
 \fancyhfoffset[l]{\dimexpr\Gm@lmargin-\Gm@rmargin\relax}
 \fancyfoot[L]{\textcolor{Gray}{\@date}}
-\fancyfoot[C]{\textcolor{Gray}{\@shortname~~~$\cdot$~~~Curriculum Vitae}}
-\fancyfoot[R]{\textcolor{Gray}{\thepage}}
 
 % Publication
 \RequirePackage[
@@ -259,14 +257,3 @@
 \renewcommand*{\mkbibnamesuffix}[1]{\ifitemannotation{highlight}{\mkbibbold{#1}}{#1}}
 \DeclareFieldFormat{addendum}{\textcolor{Gray}{#1}}
 \defbibenvironment{bibliography}{\begin{enumerate}}{\end{enumerate}}{\item}
-
-\newcommand*{\publications}[2][]{%
-  \begin{refsection}[#2]
-    \nocite{*}
-    \ifthenelse{\equal{#1}{}}{%
-      \printbibliography[heading=none]%
-    }{%
-      \printbibliography[heading=none,#1]%
-    }
-  \end{refsection}
-}
